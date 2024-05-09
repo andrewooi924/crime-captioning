@@ -1,0 +1,1 @@
+Download the model weights from this link https://www.dropbox.com/scl/fi/co0sj5lcvls2fd4cf38tl/c3d_sports1m.h5?rlkey=g0ctrdzrcdilly7zlrjw5y09k&st=16e34lkp&dl=0 and place it in this folder (trained_models)
