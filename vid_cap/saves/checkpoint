@@ -1,0 +1,2 @@
+model_checkpoint_path: "UCF-CAP-best.ckpt"
+all_model_checkpoint_paths: "UCF-CAP-best.ckpt"
