@@ -1,0 +1,13 @@
+<View>
+  <Video name="video" value="$video_url" sync="audio" framerate="30"/>
+  <Header value="Prediction: $caption"/>
+  <Text name="timestamps" value="Anomaly Timestamp: $anomaly_start , $anomaly_end" />
+  <Choices name="resp" toName="video" required="true">
+    <Choice value="Accurate"/>
+    <Choice value="Inaccurate"/>
+  </Choices>
+  <View visibleWhen="choice-selected" whenTagName="resp" whenChoiceValue="Inaccurate"> 
+    <Header value="Please provide the accurate caption"/> 
+    <TextArea name="pred" toName="video" rows="1" maxSubmissions="1"/>
+  </View>
+</View>

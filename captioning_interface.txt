@@ -1,0 +1,5 @@
+<View>
+  <Video name="video" value="$video_url" sync="audio" framerate="30"/>
+  <Header name="header" value="Video captioning model is running..."/>
+  <TextArea name="area" toName="video" />
+</View>
