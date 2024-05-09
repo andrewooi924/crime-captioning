@@ -34,10 +34,30 @@ class CrimeCaptioning(LabelStudioMLBase):
         # Parsed JSON Label config: {self.parsed_label_config}
         # Extra params: {self.extra_params}''')
 
+        # cleaning up all folders first
+        for file in os.listdir("vid_cap/input"):
+            vid_path = os.path.join("vid_cap/input", file)
+            os.remove(vid_path)
+
+        for file in os.listdir("vid_cap/output"):
+            vid_path = os.path.join("vid_cap/output", file)
+            os.remove(vid_path)
+
+        for file in os.listdir("vid_cap/Eval_Res"):
+            vid_path = os.path.join("vid_cap/Eval_Res", file)
+            os.remove(vid_path)
+
+        for folder in os.listdir("vid_cap/AnomalyFrames"):
+            dir_path = os.path.join("vid_cap/AnomalyFrames", folder)
+            shutil.rmtree(dir_path)
+
+        for folder in os.listdir("vid_cap/AnomalyClips"):
+            dir_path = os.path.join("vid_cap/AnomalyClips", folder)
+            shutil.rmtree(dir_path)
+
         video_url = tasks[0]['data']['video_url'].split("/")[-1]
         print(video_url)
         prediction = self.caption(video_url)
-        print("Prediction: " + prediction)
 
         # add caption to JSON file
         file_path = "caption.json"
@@ -107,6 +127,7 @@ class CrimeCaptioning(LabelStudioMLBase):
 
     def caption(self, video_name):
         result = []
+        error = False
         DIR_PREFIX = str(uuid.uuid4())
         
         try:
@@ -122,6 +143,10 @@ class CrimeCaptioning(LabelStudioMLBase):
             with open(file=download_file_path, mode="wb") as download_file:
                 download_file.write(container_client.download_blob(video_name).readall())
 
+            if video_name.split(".")[1] != "mp4":
+                print("Video must be in .mp4 format!")
+                error = True
+                raise Exception("Video must be in .mp4 format!")
             subprocess.run("python vid_cap/demo.py", check=True)
             subprocess.run("python vid_cap/Test_Anomaly_Detector_public.py", check=True)
             subprocess.run("python vid_cap/Save_Anomaly_Clips.py", check=True)
@@ -143,7 +168,8 @@ class CrimeCaptioning(LabelStudioMLBase):
         finally:
             with open("vid_cap/demo_test.log", "r") as file:
                 result = file.readline()
-                
+            if not error:
+                print("Prediction: " + prediction)
             return result
 
 
