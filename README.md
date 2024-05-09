@@ -1,3 +1,5 @@
+# How to run the model
+
 This guide describes the simplest way to start using ML backend with Label Studio.
 
 ## Running with Docker (Recommended)
