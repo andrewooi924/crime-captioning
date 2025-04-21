@@ -1,7 +1,7 @@
 
 # End User Guide
 
-This comprehensive end user guide covers everything needed to eectively utilise the machine learning assisted video
+This comprehensive end user guide covers everything needed to utilise the machine learning assisted video
 annotation tool, including detailed instructions and step-by-step guidance on how to import your own videos, perform
 video captioning and evaluate the outputted caption.
 
