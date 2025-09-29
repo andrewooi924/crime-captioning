@@ -1,3 +1,8 @@
+# Contributors
+1. Lee Zhen Xuan (Project Manager)
+2. Loh Jing Wei (Quality Assurance)
+3. Chen Xin Hui (Quality Assurance)
+4. Ooi Yu Zhang (Technical Lead)
 
 # End User Guide
 
@@ -144,3 +149,4 @@ In this section, we will be evaluating the outputted caption from the video capt
 **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdsCCRrJnz581tTOw1OyZwCLrVelnL52xwEBgwDdLYrDHSlVXXjlwmhs3_yh1nBcwfwgpKk9EItXBai840jRmOINfvkb8_RPR5cOOO10Q8VGnJzgFUfFdV1QAKlY5kFVC0xdzGzGnZbERx1-Hs8Y9iZJXhU?key=aJAMiN2pWmOeIr7IPgSyVA)**
 5. Open up the file in a text editor of your choice, here is what the contents of the output should look like.
 **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcqjDK-K2qrvZroOuatwaqwUDh8n9kuilBkWVi8BcinK4HSibM2p5DFuSZa2szhOINOj43hyEY1BrYZjSG3veWAgunWfOCfUiPD4n3LOfAN6fFqOFFRd51z2rLmFkZ2fzXVK9DbpCekzKbJmNo4okf6ARw?key=aJAMiN2pWmOeIr7IPgSyVA)**
+
